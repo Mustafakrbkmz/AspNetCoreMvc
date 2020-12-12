@@ -1,0 +1,56 @@
+﻿@model AspNetCoreMvc2.Introduction.Models.EmployeeListViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RazorDemo</title>
+</head>
+<body>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>City Id</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Employees)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td>@item.CityId </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @try
+    {
+
+    }
+    catch (Exception)
+    {
+
+        throw;
+    }
+    @using(Html.BeginForm())
+    {
+        <input type="text" id="" name="" />
+        <button type="submit">Gönder</button>
+    }
+
+</body>
+</html>
